@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+*.log
+.gradle/
+build/
+android/.gradle/
+android/build/
+ios/build/
+.ruby-lsp/
