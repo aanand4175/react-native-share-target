@@ -1,6 +1,6 @@
 {
   "name": "react-native-share-target",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Receive shared text, links, multiple photos, videos, and documents from any app into React Native with zero crash, modern Swift App Extension & Android Scoped Storage support.",
   "main": "lib/index.js",
   "module": "src/index.ts",

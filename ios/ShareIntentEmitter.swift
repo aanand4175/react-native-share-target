@@ -102,23 +102,31 @@ public class ShareIntentEmitter: RCTEventEmitter {
 
         DispatchQueue.main.async {
             let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
-            guard let topVC = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController else {
+            guard let topVC = ShareIntentEmitter.topViewController() else {
                 resolve(0)
                 return
             }
-            var presenter = topVC
-            while let presented = presenter.presentedViewController {
-                presenter = presented
-            }
             if let popover = activityVC.popoverPresentationController {
-                popover.sourceView = presenter.view
-                popover.sourceRect = CGRect(x: presenter.view.bounds.midX, y: presenter.view.bounds.midY, width: 0, height: 0)
+                popover.sourceView = topVC.view
+                popover.sourceRect = CGRect(x: topVC.view.bounds.midX, y: topVC.view.bounds.midY, width: 0, height: 0)
                 popover.permittedArrowDirections = []
             }
-            presenter.present(activityVC, animated: true) {
+            topVC.present(activityVC, animated: true) {
                 resolve(items.count)
             }
         }
+    }
+
+    private static func topViewController() -> UIViewController? {
+        let window = UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first { $0.isKeyWindow }
+        var top = window?.rootViewController
+        while let presented = top?.presentedViewController, !presented.isBeingDismissed {
+            top = presented
+        }
+        return top
     }
 }
 

@@ -1,8 +1,8 @@
 .DS_Store
-.gradle
-build/
-android/.gradle/
+.gradle/
+**/build/
+**/.gradle/
 android/build/
+android/.gradle/
 ios/build/
 *.log
-

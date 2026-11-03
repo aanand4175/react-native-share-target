@@ -101,7 +101,7 @@ class ShareIntentModule(private val reactContext: ReactApplicationContext) :
                 return
             }
 
-            val activity = currentActivity
+            val activity = getCurrentActivity()
             val activityIntent = activity?.intent
             if (activityIntent != null && isShareAction(activityIntent.action)) {
                 activity.intent = Intent()
@@ -166,7 +166,7 @@ class ShareIntentModule(private val reactContext: ReactApplicationContext) :
             }
 
             val chooser = Intent.createChooser(send, null)
-            val activity = currentActivity
+            val activity = getCurrentActivity()
             if (activity != null) {
                 chooser.putExtra(
                     Intent.EXTRA_EXCLUDE_COMPONENTS,
@@ -203,7 +203,7 @@ class ShareIntentModule(private val reactContext: ReactApplicationContext) :
 
     private fun clearActivityShareIntent() {
         try {
-            val activity = currentActivity ?: return
+            val activity = getCurrentActivity() ?: return
             if (isShareAction(activity.intent?.action)) {
                 activity.intent = Intent()
             }

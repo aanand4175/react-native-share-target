@@ -16,6 +16,11 @@ Pod::Spec.new do |s|
   s.source_files  = "ios/*.{h,m,mm,swift}"
   s.exclude_files = "ios/template/**"
   s.requires_arc  = true
+  s.swift_version = "5.0"
 
-  s.dependency "React-Core"
+  if defined?(install_modules_dependencies) != nil
+    install_modules_dependencies(s)
+  else
+    s.dependency "React-Core"
+  end
 end
