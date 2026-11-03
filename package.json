@@ -1,6 +1,6 @@
 {
   "name": "react-native-share-target",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Receive shared text, links, multiple photos, videos, and documents from any app into React Native with zero crash, modern Swift App Extension & Android Scoped Storage support.",
   "main": "lib/index.js",
   "module": "src/index.ts",
@@ -19,7 +19,12 @@
     "ios-share-extension",
     "android-share-sheet"
   ],
-  "author": "BICTA Team",
+  "author": "Aanand Kumar <aanand4175@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aanand4175/react-native-share-target.git"
+  },
+  "homepage": "https://github.com/aanand4175/react-native-share-target#readme",
   "license": "MIT",
   "peerDependencies": {
     "react": "*",

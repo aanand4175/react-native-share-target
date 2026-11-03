@@ -4,7 +4,7 @@
 
 [![npm version](https://img.shields.io/npm/v/react-native-share-target.svg)](https://www.npmjs.com/package/react-native-share-target)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/bicta/react-native-share-target)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/aanand4175/react-native-share-target)
 
 ---
 
@@ -337,4 +337,4 @@ Opens native system share sheet with file attachments.
 ---
 
 ## 📄 License
-MIT © BICTA Team
+MIT © Aanand Kumar
